@@ -3,6 +3,8 @@
 ## Overview
 This Python script automates the management of Unix-based system dotfiles, enabling easy backup, version control with Git, and symlink management with GNU Stow. It's designed to copy dotfiles to a new directory, track changes using Git, and use Stow for easy symlink creation, ensuring a manageable and replicable environment setup.
 
+![](assets/img/scriptimg.png)
+
 ## Features
 - **Automatic Backup**: Copies dotfiles to a `dotfiles` directory, renaming originals with `.bak` for safety.
 - **Selective Copying**: Only copies files/directories under 9GB by default, to avoid unnecessary space consumption.
