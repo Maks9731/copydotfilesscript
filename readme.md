@@ -50,12 +50,16 @@ This Python script automates the management of Unix-based system dotfiles, enabl
 - If the script encounters permissions issues, you might need to run it with sudo privileges.
 - Check the script's output for any error messages or skipped files due to size constraints.
 - If reverting changes, confirm that `.bak` files are correctly restored and symlinks are removed.
-=======
+
+## Knows issues: 
+If you have a file with the same name in the source directory and the destination directory, the script will not create a symlink for that file. Usually this is not an issue unless you have a programm like atuin which creates a new file with the same name as the original file while the script is running. That way the script can't create a symlink for the new file because there is already a file with the same name in the source directory.
+
+You can fix this by disabling programms like atuin which are running in the background and constantly creating new files with the same name as the original files temporarily while the script is running.
+
 ## Post-Operation
 - Verify that dotfiles are copied, and symlinks are correctly created.
 - Ensure the Git repository is initialized in the `dotfiles` directory, and changes are tracked.
 - In case of errors, the script outputs detailed messages for troubleshooting.
->>>>>>> 93efe6b50812a9c4b18de5874e81b50ead91b7b8
 
 ## Conclusion
 This concise script streamlines the dotfiles management process, enhancing the backup, restoration, and version control of your Unix-based system's configuration files.
