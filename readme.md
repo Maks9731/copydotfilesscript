@@ -46,6 +46,11 @@ This script is designed for managing and backing up your dotfiles to a new direc
 - If the script encounters permissions issues, you might need to run it with sudo privileges.
 - Check the script's output for any error messages or skipped files due to size constraints.
 - If reverting changes, confirm that `.bak` files are correctly restored and symlinks are removed.
+## Knows issues: 
+If you have a file with the same name in the source directory and the destination directory, the script will not create a symlink for that file. Usually this is not an issue unless you have a programm like atuin which creates a new file with the same name as the original file while the script is running. That way the script can't create a symlink for the new file because there is already a file with the same name in the source directory.
+
+You can fix this by disabling programms like atuin which are running in the background and constantly creating new files with the same name as the original files temporarily while the script is running.
+
 
 ## Conclusion
 
